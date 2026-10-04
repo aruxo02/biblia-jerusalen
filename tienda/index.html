@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ficha para las tiendas — Biblia de Jerusalén</title>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="../img/icono.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../css/estilo.css" />
+    <style>
+      .campo { margin: 18px 0; }
+      .campo label { font-weight: 600; }
+      .cuenta { float: right; color: var(--muted); font-size: .9rem; }
+      .fila-copiar { display: flex; gap: 8px; margin-top: 6px; align-items: flex-start; }
+      .fila-copiar input, .fila-copiar textarea { flex: 1; min-width: 0; font: inherit; font-size: .97rem; color: var(--text);
+        background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; }
+      .fila-copiar textarea { resize: vertical; line-height: 1.5; }
+      .copiar { min-height: 44px; padding: 0 16px; border-radius: 12px; border: 0; background: var(--accent);
+        color: var(--on-accent); font: inherit; font-weight: 600; cursor: pointer; flex: 0 0 auto; }
+      .descargas { columns: 2 220px; padding-left: 1.2em; }
+      .nota { color: var(--muted); font-size: .95rem; }
+      .tabla th[scope=row] { width: 42%; font-weight: 600; background: var(--surface-alt); }
+      .aviso { border-left: 4px solid var(--accent); background: var(--surface); padding: 12px 16px; border-radius: 0 12px 12px 0; }
+      #copiado { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); background: var(--text); color: var(--bg);
+        padding: 10px 18px; border-radius: 999px; opacity: 0; transition: opacity .2s; pointer-events: none; }
+      #copiado.visible { opacity: 1; }
+    </style>
+  </head>
+  <body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+    <header class="cabecera">
+      <div class="contenedor">
+        <a class="marca" href="../"><img src="../img/icono-192.png" alt="" width="36" height="36" />Biblia de Jerusalén</a>
+        <nav class="menu" aria-label="Principal">
+          <a href="../">Inicio</a><a href="../ayuda.html">Ayuda</a><a href="../privacidad.html">Privacidad</a>
+        </nav>
+      </div>
+    </header>
+    <main id="contenido" class="pagina">
+      <div class="contenedor texto">
+        <h1>Ficha para las tiendas</h1>
+        <p>Todo lo que piden Google Play Console y App Store Connect, listo para copiar. Cada texto respeta el límite de caracteres de la tienda.</p>
+        <nav aria-label="En esta página"><ul>
+          <li><a href="#enlaces">Enlaces y datos</a></li>
+          <li><a href="#google">Google Play</a></li>
+          <li><a href="#apple">App Store</a></li>
+          <li><a href="#antes">Antes de subir la app</a></li>
+        </ul></nav>
+
+        <h2 id="enlaces">Enlaces y datos</h2>
+        <div class="campo">
+  <label for="url-privacidad">Política de privacidad</label>
+  <div class="fila-copiar"><input id="url-privacidad" type="text" readonly value="https://aruxo02.github.io/biblia-jerusalen/privacidad.html"><button type="button" class="copiar" data-para="url-privacidad">Copiar</button></div>
+</div>
+        <div class="campo">
+  <label for="url-ayuda">Asistencia / ayuda</label>
+  <div class="fila-copiar"><input id="url-ayuda" type="text" readonly value="https://aruxo02.github.io/biblia-jerusalen/ayuda.html"><button type="button" class="copiar" data-para="url-ayuda">Copiar</button></div>
+</div>
+        <div class="campo">
+  <label for="url-web">Sitio web (marketing)</label>
+  <div class="fila-copiar"><input id="url-web" type="text" readonly value="https://aruxo02.github.io/biblia-jerusalen/"><button type="button" class="copiar" data-para="url-web">Copiar</button></div>
+</div>
+        <div class="campo">
+  <label for="correo">Correo de contacto</label>
+  <div class="fila-copiar"><input id="correo" type="text" readonly value="moilopote@gmail.com"><button type="button" class="copiar" data-para="correo">Copiar</button></div>
+</div>
+        <div class="campo">
+  <label for="nombre">Nombre de la app</label><span class="cuenta">19 / 30</span>
+  <div class="fila-copiar"><input id="nombre" type="text" readonly value="Biblia de Jerusalén"><button type="button" class="copiar" data-para="nombre">Copiar</button></div>
+</div>
+        <div class="campo">
+  <label for="desarrollador">Desarrollador</label>
+  <div class="fila-copiar"><input id="desarrollador" type="text" readonly value="López Otero"><button type="button" class="copiar" data-para="desarrollador">Copiar</button></div>
+</div>
+        <div class="campo">
+  <label for="paquete">Paquete (Android) e identificador (iOS)</label>
+  <div class="fila-copiar"><input id="paquete" type="text" readonly value="com.lopezotero.bibliajerusalen"><button type="button" class="copiar" data-para="paquete">Copiar</button></div>
+</div>
+
+        <h2 id="google">Google Play</h2>
+        <h3>Ficha principal</h3>
+        <div class="campo">
+  <label for="gp-corta">Descripción breve</label><span class="cuenta">80 / 80</span>
+  <div class="fila-copiar"><input id="gp-corta" type="text" readonly value="La Biblia con notas y paralelos, la Liturgia de las Horas y las lecturas del día"><button type="button" class="copiar" data-para="gp-corta">Copiar</button></div>
+</div>
+        <div class="campo">
+  <label for="gp-larga">Descripción completa</label><span class="cuenta">2503 / 4000</span>
+  <div class="fila-copiar"><textarea id="gp-larga" readonly rows="14">Biblia de Jerusalén reúne en una sola aplicación la Sagrada Escritura con sus notas y referencias, la oración de la Iglesia y las lecturas de cada día. Pensada para el Camino Neocatecumenal y para cualquiera que quiera leer, rezar y estudiar la Palabra.
+
+LA BIBLIA
+• Los 73 libros, con las notas a pie de página y las referencias paralelas.
+• Lector cómodo: texto corrido o versículo a versículo, con la letra y el tamaño que prefieras.
+• Marca versículos con colores, escribe tus notas y une pasajes con tus propios paralelos.
+• Búsqueda en todo el texto, sin preocuparte de las tildes.
+• Introducciones a cada libro, mapas, cronología, árbol de dinastías, calendario judío y pesos y medidas.
+• Compara evangelios: la misma escena en dos evangelios a la vez, en pantalla dividida.
+• Sinopsis de los evangelios, personajes de la Biblia y Vocabulario de Teología Bíblica.
+
+LITURGIA
+• Liturgia de las Horas completa: Oficio de lectura, Laudes, Hora intermedia, Vísperas y Completas, según el calendario de tu país.
+• Lecturas de la Misa de cada día, con el salmo y el Evangelio.
+• OLE: Oficio, Laudes y Evangelio en un solo rezo.
+• Calendario litúrgico, año litúrgico y santoral del día.
+• ¿Cuándo se lee en Misa? Escribe una cita y mira los próximos días en que se proclama.
+
+CAMINO NEOCATECUMENAL
+• Prepara tema: preparación de la Celebración de la Palabra, con el reparto de lecturas y aviso el día antes.
+• Escrutar la Palabra, con tu registro.
+• Diario espiritual con tus resonancias.
+
+ORACIÓN
+• Santo Rosario guiado, con los misterios del día.
+• Devocionario por categorías, Vía Crucis, novenas, Ángelus / Regina Coeli y examen de conciencia.
+• Oración por los difuntos, con aviso en su aniversario.
+• Recuerda el santo: apunta nombres y la app te avisa el día de su santo.
+• Lectio divina con el Evangelio del día.
+
+Y ADEMÁS
+• Escucha la Biblia y la liturgia en voz alta.
+• Widget con el versículo del día (Android).
+• Evangelio y lectura al azar, planes de lectura y el juego «¿Quién es quién?».
+• Noticias del Vaticano.
+• Pantalla de inicio a tu gusto y siete estilos de color, con modo oscuro.
+
+PARA TODOS
+• Pensada para TalkBack y VoiceOver: con el lector de pantalla, la Biblia se lee versículo a versículo, con acciones para marcar, ver notas y paralelos o escuchar.
+• Alto contraste, letra grande y opción de quitar las animaciones.
+
+TUYA
+• Sin anuncios, sin registro y sin recoger ningún dato. Todo se guarda en tu móvil.
+• Funciona sin conexión; internet solo hace falta para las noticias.</textarea><button type="button" class="copiar" data-para="gp-larga">Copiar</button></div>
+</div>
+        <div class="envoltura-tabla" tabindex="0" role="region" aria-label="Google Play: categoría e imágenes"><table class="tabla"><tbody><tr><th scope="row">Categoría</th><td>Libros y obras de consulta</td></tr><tr><th scope="row">Icono</th><td><a href="google-play/icono-512.png" download>icono-512.png</a> (512 × 512)</td></tr><tr><th scope="row">Gráfico destacado</th><td><a href="google-play/grafico-destacado-1024x500.png" download>grafico-destacado-1024x500.png</a> (1024 × 500)</td></tr></tbody></table></div>
+        <h3>Capturas del teléfono (1080 × 1920)</h3><p class="nota">Sube de 2 a 8. Están en orden: la primera es la que más se ve.</p><ul class="descargas"><li><a href="google-play/capturas/01-inicio.png" download>01-inicio.png</a></li><li><a href="google-play/capturas/02-biblia.png" download>02-biblia.png</a></li><li><a href="google-play/capturas/03-versiculo.png" download>03-versiculo.png</a></li><li><a href="google-play/capturas/04-laudes.png" download>04-laudes.png</a></li><li><a href="google-play/capturas/05-lecturas.png" download>05-lecturas.png</a></li><li><a href="google-play/capturas/06-rosario.png" download>06-rosario.png</a></li><li><a href="google-play/capturas/07-comparar.png" download>07-comparar.png</a></li><li><a href="google-play/capturas/08-mapa.png" download>08-mapa.png</a></li><li><a href="google-play/capturas/09-utilidades.png" download>09-utilidades.png</a></li></ul>
+
+        <h3>Contenido de la aplicación</h3>
+        <div class="envoltura-tabla" tabindex="0" role="region" aria-label="Google Play: contenido de la aplicación"><table class="tabla"><tbody><tr><th scope="row">Política de privacidad</th><td>La dirección de arriba.</td></tr><tr><th scope="row">Anuncios</th><td>No, la app no contiene anuncios.</td></tr><tr><th scope="row">Acceso a la aplicación</th><td>Toda la funcionalidad está disponible sin restricciones (no hay inicio de sesión).</td></tr><tr><th scope="row">Clasificación de contenido</th><td>Categoría «Referencia, noticias o educación». Responde «No» a violencia, sexo, lenguaje, drogas, apuestas, interacción entre usuarios, compartir ubicación y compras digitales. Resultado esperado: PEGI 3 / Para todos.</td></tr><tr><th scope="row">Público objetivo</th><td>13 años o más (13-15, 16-17 y 18 o más). Si incluyes menores de 13, Google aplica el programa de Familias, con más requisitos.</td></tr><tr><th scope="row">¿Es una app de noticias?</th><td>No: tiene una sección de noticias, pero no es su función principal.</td></tr><tr><th scope="row">Seguridad de los datos</th><td>¿Recoge o comparte la app alguno de los tipos de datos de usuario obligatorios? <strong>No.</strong> Resultado: «No se recogen datos» y «No se comparten datos con terceros».</td></tr><tr><th scope="row">Apps gubernamentales, financieras, de salud</th><td>No / Ninguna.</td></tr><tr><th scope="row">Permisos especiales</th><td>Ninguno que declarar (no usa ubicación, SMS, llamadas, alarmas exactas ni acceso a todos los archivos).</td></tr></tbody></table></div>
+
+        <h2 id="apple">App Store</h2>
+        <h3>Información de la app</h3>
+        <div class="campo">
+  <label for="as-subtitulo">Subtítulo</label><span class="cuenta">24 / 30</span>
+  <div class="fila-copiar"><input id="as-subtitulo" type="text" readonly value="Biblia, Horas y lecturas"><button type="button" class="copiar" data-para="as-subtitulo">Copiar</button></div>
+</div>
+        <div class="campo">
+  <label for="as-promo">Texto promocional</label><span class="cuenta">153 / 170</span>
+  <div class="fila-copiar"><textarea id="as-promo" readonly rows="3">Lee la Biblia con sus notas y paralelos, reza la Liturgia de las Horas y prepara la Celebración de la Palabra. Sin anuncios, sin registro y sin conexión.</textarea><button type="button" class="copiar" data-para="as-promo">Copiar</button></div>
+</div>
+        <div class="campo">
+  <label for="as-desc">Descripción</label><span class="cuenta">2503 / 4000</span>
+  <div class="fila-copiar"><textarea id="as-desc" readonly rows="14">Biblia de Jerusalén reúne en una sola aplicación la Sagrada Escritura con sus notas y referencias, la oración de la Iglesia y las lecturas de cada día. Pensada para el Camino Neocatecumenal y para cualquiera que quiera leer, rezar y estudiar la Palabra.
+
+LA BIBLIA
+• Los 73 libros, con las notas a pie de página y las referencias paralelas.
+• Lector cómodo: texto corrido o versículo a versículo, con la letra y el tamaño que prefieras.
+• Marca versículos con colores, escribe tus notas y une pasajes con tus propios paralelos.
+• Búsqueda en todo el texto, sin preocuparte de las tildes.
+• Introducciones a cada libro, mapas, cronología, árbol de dinastías, calendario judío y pesos y medidas.
+• Compara evangelios: la misma escena en dos evangelios a la vez, en pantalla dividida.
+• Sinopsis de los evangelios, personajes de la Biblia y Vocabulario de Teología Bíblica.
+
+LITURGIA
+• Liturgia de las Horas completa: Oficio de lectura, Laudes, Hora intermedia, Vísperas y Completas, según el calendario de tu país.
+• Lecturas de la Misa de cada día, con el salmo y el Evangelio.
+• OLE: Oficio, Laudes y Evangelio en un solo rezo.
+• Calendario litúrgico, año litúrgico y santoral del día.
+• ¿Cuándo se lee en Misa? Escribe una cita y mira los próximos días en que se proclama.
+
+CAMINO NEOCATECUMENAL
+• Prepara tema: preparación de la Celebración de la Palabra, con el reparto de lecturas y aviso el día antes.
+• Escrutar la Palabra, con tu registro.
+• Diario espiritual con tus resonancias.
+
+ORACIÓN
+• Santo Rosario guiado, con los misterios del día.
+• Devocionario por categorías, Vía Crucis, novenas, Ángelus / Regina Coeli y examen de conciencia.
+• Oración por los difuntos, con aviso en su aniversario.
+• Recuerda el santo: apunta nombres y la app te avisa el día de su santo.
+• Lectio divina con el Evangelio del día.
+
+Y ADEMÁS
+• Escucha la Biblia y la liturgia en voz alta.
+• Widget con el versículo del día (Android).
+• Evangelio y lectura al azar, planes de lectura y el juego «¿Quién es quién?».
+• Noticias del Vaticano.
+• Pantalla de inicio a tu gusto y siete estilos de color, con modo oscuro.
+
+PARA TODOS
+• Pensada para TalkBack y VoiceOver: con el lector de pantalla, la Biblia se lee versículo a versículo, con acciones para marcar, ver notas y paralelos o escuchar.
+• Alto contraste, letra grande y opción de quitar las animaciones.
+
+TUYA
+• Sin anuncios, sin registro y sin recoger ningún dato. Todo se guarda en tu móvil.
+• Funciona sin conexión; internet solo hace falta para las noticias.</textarea><button type="button" class="copiar" data-para="as-desc">Copiar</button></div>
+</div>
+        <div class="campo">
+  <label for="as-claves">Palabras clave (separadas por comas, sin espacios)</label><span class="cuenta">98 / 100</span>
+  <div class="fila-copiar"><input id="as-claves" type="text" readonly value="liturgia,horas,laudes,visperas,breviario,evangelio,lecturas,misa,rosario,santoral,oracion,catolica"><button type="button" class="copiar" data-para="as-claves">Copiar</button></div>
+</div>
+        <div class="campo">
+  <label for="as-copyright">Copyright (campo obligatorio de Apple)</label>
+  <div class="fila-copiar"><input id="as-copyright" type="text" readonly value="2026 López Otero"><button type="button" class="copiar" data-para="as-copyright">Copiar</button></div>
+</div>
+        <div class="envoltura-tabla" tabindex="0" role="region" aria-label="App Store: categorías y cuestionarios"><table class="tabla"><tbody><tr><th scope="row">Categoría principal</th><td>Referencia</td></tr><tr><th scope="row">Categoría secundaria</th><td>Libros</td></tr><tr><th scope="row">Clasificación por edades</th><td>Responde «Ninguno» / «No» a todo el cuestionario. El navegador de la app solo abre enlaces de las noticias: «Acceso web sin restricciones», no. Resultado esperado: 4+.</td></tr><tr><th scope="row">Privacidad de la app</th><td>«Datos no recopilados».</td></tr><tr><th scope="row">Cifrado (exportación)</th><td>Solo usa el HTTPS del sistema: exento. La app ya lo declara (ITSAppUsesNonExemptEncryption = NO), así que no lo preguntará en cada versión.</td></tr><tr><th scope="row">Información para la revisión</th><td>No hace falta cuenta de prueba: no hay inicio de sesión. Nota sugerida: «Biblia, Liturgia de las Horas y lecturas del día. Todo el contenido está en la app y funciona sin conexión; solo las noticias usan internet.»</td></tr></tbody></table></div>
+        <h3>Capturas de iPhone 6,9″ (1290 × 2796)</h3><p class="nota">Apple las reduce para los iPhone más pequeños.</p><ul class="descargas"><li><a href="app-store/iphone-6.9/01-inicio.png" download>01-inicio.png</a></li><li><a href="app-store/iphone-6.9/02-biblia.png" download>02-biblia.png</a></li><li><a href="app-store/iphone-6.9/03-versiculo.png" download>03-versiculo.png</a></li><li><a href="app-store/iphone-6.9/04-laudes.png" download>04-laudes.png</a></li><li><a href="app-store/iphone-6.9/05-lecturas.png" download>05-lecturas.png</a></li><li><a href="app-store/iphone-6.9/06-rosario.png" download>06-rosario.png</a></li><li><a href="app-store/iphone-6.9/07-comparar.png" download>07-comparar.png</a></li><li><a href="app-store/iphone-6.9/08-mapa.png" download>08-mapa.png</a></li><li><a href="app-store/iphone-6.9/09-utilidades.png" download>09-utilidades.png</a></li></ul>
+        <h3>Capturas de iPad 13″ (2064 × 2752)</h3><p class="nota">Obligatorias porque la app admite iPad. Si prefieres no publicarla para iPad, se puede desactivar y en el iPad se abrirá en modo iPhone; entonces no hacen falta.</p><ul class="descargas"><li><a href="app-store/ipad-13/01-inicio.png" download>01-inicio.png</a></li><li><a href="app-store/ipad-13/02-biblia.png" download>02-biblia.png</a></li><li><a href="app-store/ipad-13/03-versiculo.png" download>03-versiculo.png</a></li><li><a href="app-store/ipad-13/04-laudes.png" download>04-laudes.png</a></li><li><a href="app-store/ipad-13/05-lecturas.png" download>05-lecturas.png</a></li><li><a href="app-store/ipad-13/06-rosario.png" download>06-rosario.png</a></li><li><a href="app-store/ipad-13/07-comparar.png" download>07-comparar.png</a></li><li><a href="app-store/ipad-13/08-mapa.png" download>08-mapa.png</a></li><li><a href="app-store/ipad-13/09-utilidades.png" download>09-utilidades.png</a></li></ul>
+
+        <h2 id="antes">Antes de subir la app</h2>
+        <div class="aviso">
+          <ul>
+            <li><strong>Google Play pide un .aab firmado</strong> con una clave de subida propia (no el APK de prueba, que va firmado con una clave de depuración). Hay que crear esa clave una vez y guardarla bien: sin ella no se pueden publicar actualizaciones.</li>
+            <li>Las cuentas personales de Google Play creadas desde noviembre de 2023 deben hacer antes una <strong>prueba cerrada con 12 personas durante 14 días</strong>.</li>
+            <li>Para iOS hace falta la cuenta de Apple Developer y compilar con EAS Build (en la nube) o con un Mac.</li>
+            <li><strong>Esta web no caduca:</strong> la dirección es de GitHub y no depende de ningún dominio. No hace falta renovarla; solo no borres el repositorio.</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <div id="copiado" role="status" aria-live="polite"></div>
+    <footer class="pie"><div class="contenedor"><p>Biblia de Jerusalén · Una app de López Otero</p></div></footer>
+    <script>
+      const aviso = document.getElementById('copiado');
+      let t;
+      document.querySelectorAll('.copiar').forEach((b) => {
+        const campo = document.getElementById(b.dataset.para);
+        const etiqueta = document.querySelector('label[for="' + b.dataset.para + '"]').textContent;
+        b.setAttribute('aria-label', 'Copiar: ' + etiqueta);
+        b.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(campo.value);
+          } catch (e) {
+            campo.select();
+            document.execCommand('copy');
+          }
+          aviso.textContent = 'Copiado: ' + etiqueta;
+          aviso.classList.add('visible');
+          clearTimeout(t);
+          t = setTimeout(() => aviso.classList.remove('visible'), 1800);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,466 @@
+/* Biblia de Jerusalén — web de presentación, privacidad y ayuda.
+   Mismos colores y letras que la app (estilo Básico); modo oscuro según el sistema. */
+
+@font-face {
+  font-family: 'Literata';
+  src: url('../fuentes/literata-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Literata';
+  src: url('../fuentes/literata-400i.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Literata';
+  src: url('../fuentes/literata-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('../fuentes/inter-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('../fuentes/inter-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg: #fbf8ed;
+  --surface: #ffffff;
+  --surface-alt: #f3efe2;
+  --text: #1f2430;
+  --muted: #5b6170;
+  --border: #e6dfcb;
+  --accent: #1d4783;
+  --accent-soft: #e4ebf6;
+  --on-accent: #ffffff;
+  --green: #2e6b3f;
+  --shadow: 0 10px 30px rgba(12, 44, 98, 0.08);
+  --radius: 18px;
+  --serif: 'Literata', Georgia, 'Times New Roman', serif;
+  --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1520;
+    --surface: #18202e;
+    --surface-alt: #1f2938;
+    --text: #e9ecf2;
+    --muted: #a7afbf;
+    --border: #2c3647;
+    --accent: #9db8e6;
+    --accent-soft: #1f2d45;
+    --on-accent: #0c1830;
+    --green: #8fc79d;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    color-scheme: dark;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+a {
+  color: var(--accent);
+  text-underline-offset: 0.18em;
+}
+a:hover {
+  text-decoration-thickness: 2px;
+}
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+}
+h1 {
+  font-size: clamp(2.1rem, 6vw, 3.2rem);
+}
+h2 {
+  font-size: clamp(1.55rem, 4vw, 2.1rem);
+}
+h3 {
+  font-size: 1.25rem;
+}
+p {
+  margin: 0 0 1em;
+}
+
+.saltar {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  background: var(--accent);
+  color: var(--on-accent);
+  padding: 10px 16px;
+  border-radius: 10px;
+  z-index: 10;
+}
+.saltar:focus {
+  top: 12px;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.texto {
+  max-width: 760px;
+}
+
+/* cabecera */
+.cabecera {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+.cabecera .contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 64px;
+  flex-wrap: wrap;
+}
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  text-decoration: none;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+.marca img {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+}
+.menu {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.menu a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 0.97rem;
+}
+.menu a:hover,
+.menu a[aria-current='page'] {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* portada */
+.portada {
+  padding: 48px 0 32px;
+}
+.portada .contenedor {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: center;
+}
+.portada .icono {
+  width: 88px;
+  height: 88px;
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+.entradilla {
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 2.6vw, 1.4rem);
+  color: var(--muted);
+  max-width: 34em;
+}
+.sellos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 20px 0 24px;
+  list-style: none;
+}
+.sellos li {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+.tiendas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.boton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 10px 20px;
+  border-radius: 14px;
+  background: var(--accent);
+  color: var(--on-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.boton small {
+  display: block;
+  font-weight: 400;
+  font-size: 0.78rem;
+  opacity: 0.85;
+}
+.boton.pronto {
+  background: var(--surface-alt);
+  color: var(--text);
+  border: 1px dashed var(--muted);
+}
+.boton.pronto small {
+  opacity: 1;
+  color: var(--muted);
+}
+.movil {
+  justify-self: center;
+  width: min(300px, 80vw);
+  border-radius: 34px;
+  border: 8px solid #10151f;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  background: #10151f;
+}
+
+/* secciones */
+.seccion {
+  padding: 40px 0;
+}
+.seccion.alterna {
+  background: var(--surface-alt);
+}
+.rejilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+.tarjeta {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+.tarjeta h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.tarjeta h3 span {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-family: var(--sans);
+  font-size: 1.05rem;
+}
+.tarjeta ul {
+  margin: 0;
+  padding-left: 1.1em;
+}
+.tarjeta li {
+  margin: 0.3em 0;
+}
+
+/* galería */
+.galeria {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 8px 2px 18px;
+  margin: 20px 0 0;
+  list-style: none;
+}
+.galeria li {
+  flex: 0 0 auto;
+  width: min(240px, 66vw);
+  scroll-snap-align: start;
+}
+.galeria img {
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.galeria figcaption {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-top: 8px;
+  text-align: center;
+}
+
+.destacado {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+/* páginas de texto (privacidad, ayuda) */
+.pagina {
+  padding: 40px 0 56px;
+}
+.pagina h2 {
+  margin-top: 1.6em;
+  font-size: 1.45rem;
+}
+.pagina h3 {
+  margin-top: 1.3em;
+}
+.pagina ul,
+.pagina ol {
+  padding-left: 1.3em;
+}
+.pagina li {
+  margin: 0.35em 0;
+}
+.fecha {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.resumen {
+  background: var(--accent-soft);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  margin: 20px 0;
+}
+.resumen ul {
+  margin: 0;
+}
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 20px;
+  font-size: 0.97rem;
+}
+.tabla th,
+.tabla td {
+  text-align: left;
+  vertical-align: top;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+}
+.tabla th {
+  font-weight: 600;
+  background: var(--surface-alt);
+}
+.envoltura-tabla {
+  overflow-x: auto;
+}
+details {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 4px 18px;
+  margin: 10px 0;
+}
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 12px 0;
+  min-height: 44px;
+}
+details[open] summary {
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 10px;
+}
+.ruta {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* pie */
+.pie {
+  border-top: 1px solid var(--border);
+  padding: 28px 0 36px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.pie .contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  justify-content: space-between;
+}
+.pie nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+}
+
+@media (max-width: 760px) {
+  .portada {
+    padding-top: 28px;
+  }
+  .portada .contenedor {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .movil {
+    width: min(260px, 72vw);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
